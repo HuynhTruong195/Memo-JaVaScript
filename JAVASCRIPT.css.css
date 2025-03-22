@@ -1,0 +1,1075 @@
+Tổng quan về Javascript
+JavaScript là một ngôn ngữ script được dùng để tạo các script ở máy client và máy server. Các script ở máy client có thể thực thi được trong trình duyệt trong khi các script ở máy server lại thực hiện trên server.
+
+🧰  Khai báo biến
+JavaScript cung cấp ba từ khóa để khai báo biến:
+
+var (cách cũ, không khuyến nghị trong ES6 trở lên)
+let (khuyến nghị cho các biến có phạm vi khối)
+const (dùng cho các giá trị không thay đổi)
+
+
+Gán giá trị cho biến
+Gán giá trị cho biến chúng ta sẽ thực hiện gán từ bên phải cho phía bên trái
+
+Bạn có thể gán giá trị cho biến ngay khi khai báo:
+ let age= 25;
+
+ Hoặc gán giá trị sau khi khai báo:
+
+ let age;
+ age = 25;
+
+ 🧰 Kiểu dữ liệu JavaScript
+Biến JavaScript có thể chứa các số như 100 và các giá trị văn bản như "John Doe".
+
+Trong lập trình, giá trị văn bản được gọi là chuỗi văn bản.
+
+JavaScript có thể xử lý nhiều loại dữ liệu, nhưng hiện tại, bạn chỉ cần nghĩ đến số và chuỗi.
+
+Chuỗi được viết trong dấu ngoặc kép hoặc dấu ngoặc đơn. Số được viết không có dấu ngoặc kép.
+
+Nếu bạn đặt số trong dấu ngoặc kép, số đó sẽ được coi như một chuỗi văn bản.
+    Ví dụ
+    const pi = 3.14;
+    let person = "John Doe";
+    let answer = 'Yes I am!';
+
+🧰   Một câu lệnh, nhiều biến số
+    Bạn có thể khai báo nhiều biến trong một câu lệnh.
+    
+    Bắt đầu câu lệnh let và phân tách các biến bằng dấu phẩy :
+    Ví dụ
+    let person = "John Doe", carName = "Volvo", price = 200;
+
+🧰  Một khai báo có thể kéo dài nhiều dòng:
+
+    Ví dụ
+    let person = "John Doe",
+    carName = "Volvo",
+    price = 200;
+
+ 🧰Giá trị = không xác định
+    Trong các chương trình máy tính, các biến thường được khai báo mà không có giá trị. Giá trị có thể là thứ phải tính toán hoặc thứ sẽ được cung cấp sau, như dữ liệu đầu vào của người dùng.
+    
+    Một biến được khai báo mà không có giá trị sẽ có giá trị là undefined.
+    
+    Biến carName sẽ có giá trị undefinedsau khi thực thi câu lệnh này:
+    let carName;
+
+ 🧰Khai báo lại các biến JavaScript
+    Nếu bạn khai báo lại một biến JavaScript được khai báo bằng var, thì nó sẽ không mất giá trị.
+    
+    Biến carNamevẫn có giá trị "Volvo" sau khi thực hiện các câu lệnh sau:
+    Ví dụ
+var carName = "Volvo";
+var carName;
+ KHI GỌI BIỂN CARDNAME VẪN HIỆN VOLVO
+
+🧰Ghi chú
+    Bạn không thể khai báo lại một biến được khai báo bằng let hoặc const.
+
+    Điều này sẽ không hiệu quả:
+
+    let carName = "Volvo";
+    let carName;
+
+    KHI GỌI BIỂN CARDNAME KHÔNG HIỆN VOLVO
+
+🧰 Số học JavaScript
+BÊN CẠNH XỬ LÝ THEO TOÁN ĐẠI SỐ THÌ JS XỬ LÝ THEO CHUỖI + VỚI NHAU
+    Ví dụ
+    let x = "John" + " " + "Doe"
+    kết quả: John Doe 
+    let x = 5 + 2 + 3;
+    kết quả  10
+
+    let x = "5" + 2 + 3;
+    kết quả: 523
+
+    ✅Cách JavaScript xử lý:
+    "5" + 2 → Chuỗi "5" và số 2 ⇒ JavaScript chuyển 2 thành chuỗi "2" và thực hiện nối chuỗi → Kết quả là "52".
+
+    "52" + 3 → "52" (chuỗi) và 3 (số) ⇒ JavaScript tiếp tục chuyển 3 thành "3" và nối chuỗi → Kết quả cuối cùng là "523".
+
+    ✅Nếu bạn đặt một số trong dấu ngoặc kép, các số còn lại sẽ được coi là chuỗi và được nối lại.
+
+    let x = 2 + 3 + "5";
+    KẾT QUẢ: 55
+
+
+ 🧰 Dấu đô la JavaScript $
+    Vì JavaScript coi dấu đô la như một chữ cái nên các định danh chứa $ là tên biến hợp lệ:
+
+    let $ = "Hello World";
+    let $$$ = 2;
+    let $myMoney = 5;
+
+    ✅Việc sử dụng ký hiệu đô la không phổ biến trong JavaScript, nhưng các lập trình viên chuyên nghiệp thường sử dụng nó như một bí danh cho hàm chính trong thư viện JavaScript.
+
+    Ví dụ, trong thư viện JavaScript jQuery, hàm main $được sử dụng để chọn các phần tử HTML. Trong jQuery $("p");có nghĩa là "chọn tất cả các phần tử p".
+
+    ✅Dấu gạch dưới JavaScript (_)
+    Vì JavaScript coi dấu gạch dưới là một chữ cái nên các định danh chứa _ là tên biến hợp lệ:
+    Ví dụ:
+    let _lastName = "Johnson";
+    let _x = 2;
+    let _100 = 5;
+
+
+    🧰 input và output  🧰
+
+ ✅Input trong javascript
+Nhập dữ liệu bằng prompt()
+Hàm prompt() hiển thị hộp thoại để người dùng nhập dữ liệu.
+Dữ liệu nhận được từ prompt() luôn ở dạng chuỗi (string).
+Cú pháp:
+ let userinput = prompt (" nhap ten cua ban );
+ console.log ( "ten cua ban la "  + userinput);
+
+
+ ✅Output trong javascript
+ Hiển thị bằng console.log()
+Hàm console.log() dùng để ghi dữ liệu hoặc thông báo vào bảng điều khiển (console) của trình duyệt.
+Đây là phương pháp phổ biến để kiểm tra lỗi và theo dõi dữ liệu khi lập trình.
+Ví dụ:
+let name = "Jonh"
+console.log ("ten cua ban la") + name;
+
+✅Hiển thị bằng document.write()
+    Hàm document.write() ghi trực tiếp nội dung vào tài liệu HTML.
+    Lưu ý: Sử dụng document.write() sẽ thay thế toàn bộ nội dung của trang nếu gọi sau khi trang đã tải.
+    Ví dụ:
+    document.write ("<h1> xin chao </h1>");
+    KẾT QUẢ. CHỮ XIN CHÀO XUẤT HIỆN THAY THẾ CHO NỘI DUNG CÓ TRONG THẺ h1 BÊN HTML
+
+    ❌ Lưu ý quan trọng
+    Không dùng sau khi trang đã tải xong:
+    Nếu bạn sử dụng document.write() sau khi trang web đã tải xong (ví dụ trong setTimeout() hoặc sau một sự kiện), nó sẽ xóa toàn bộ nội dung trang html
+
+        vd: <script>
+        setTimeout(function() {
+            document.write("Trang đã bị ghi đè!");
+        }, 3000);
+        </script>
+
+        🚨 Kết quả: Sau 3 giây, toàn bộ trang web sẽ bị xóa và chỉ còn lại dòng chữ "Trang đã bị ghi đè!".
+
+        ✅Không tốt cho cập nhật động:
+        Nếu muốn cập nhật nội dung trang mà không làm mất dữ liệu cũ, bạn nên dùng innerHTML thay vì document.write(), ví dụ:
+        <p id="demo"></p>
+        <script>
+            document.getElementById("demo").innerHTML = "Nội dung mới!";
+        </script>
+        
+        ✅ vd2: 
+        <h1>My First Web Page</h1>
+        <p>My First Paragraph</p>
+
+        <p id="demo"></p>
+
+        <script>
+        document.getElementById("demo").innerHTML = "<h2>Hello World</h2>";
+        </script>
+
+        ket qua: My First Web Page
+                My First Paragraph
+                Hello World
+
+
+
+        🎯 Khi nào nên dùng document.write()?
+        Khi cần ghi nhanh nội dung vào trang trong quá trình tải.
+
+        Khi thử nghiệm JavaScript đơn giản.
+
+        Khi tạo tài liệu HTML từ JavaScript trong các ứng dụng đơn giản.
+
+
+        📌 Các kiểu dữ liệu trong JavaScript:
+
+        Kiểu Dữ Liệu	    Mô Tả	                                Ví dụ	         typeof Trả Về
+
+        String	           Chuỗi ký tự	                         "Hello"	            "string"
+        Number	           Số nguyên hoặc số thực	              42, 3.14	            "number"
+        Boolean	           Đúng (true) hoặc sai (false)	         true, false	        "boolean"
+        Object	           Đối tượng                        	{name: "John"}	            "object"
+        Array	           Mảng (là một dạng object)	            [1, 2, 3]	"           object"
+        Function	       Hàm	                                    function() {}	      "function"
+        Undefined	       Biến chưa được gán giá trị	            let x;          	"undefined"
+        Null	           Giá trị rỗng (cố ý)	                    null	                "object" (LỖI của JS)
+
+
+
+        Chuyển đổi kiểu dữ liệu tự động (Implicit type conversion)
+
+        🎯CHUYỂN ĐỔI DỮ LIỆU CHUỖI SANG SỐ ĐỂ TÍNH TOÁN.
+        vd: 
+        let a = prompt("nhap so a");   //ví dụ nhập 10
+        let b = prompt ("nhap so b");  //ví dụ nhập 20
+        
+        let x = Number (a) + Number (b);
+        
+        console.log(x);
+
+        nếu không có Number thì kết quả 1020
+        nếu CÓ Number thì kết quả 30
+        thì Number là kiểu để chuyển đổi
+
+
+        ✅Cách JavaScript xử lý:
+        "5" + 2 → Chuỗi "5" và số 2 ⇒ JavaScript chuyển 2 thành chuỗi "2" và thực hiện nối chuỗi → Kết quả là "52".
+    
+        "52" + 3 → "52" (chuỗi) và 3 (số) ⇒ JavaScript tiếp tục chuyển 3 thành "3" và nối chuỗi → Kết quả cuối cùng là "523".
+    
+        ✅Nếu bạn đặt một số trong dấu ngoặc kép, các số còn lại sẽ được coi là chuỗi và được nối lại.
+    
+        let x = 2 + 3 + "5";
+        KẾT QUẢ: 55
+
+        ✅JavaScript tự động chuyển đổi kiểu dữ liệu khi cần thiết, thường xảy ra trong các phép toán.
+        let x = "10" + 2;   //"102" vì chuỗi ưu tiên hơn dấu + nên nối chuỗi
+        let y = "10" - 2;   // 8     chuỗi k có tác dụng với dấu -
+        let x = 2 * "3";    // 6 chuỗi  3 đc chuyển sang số
+
+        🎯✅Chuyển đổi kiểu dữ liệu tường minh (Explicit type conversion)
+        Bạn có thể chủ động chuyển đổi kiểu dữ liệu bằng cách sử dụng các phương thức có sẵn trong JavaScript.
+
+        Chuyển đổi sang số (number)
+        Sử dụng các cách sau để chuyển một giá trị sang kiểu số:
+        Number(): Chuyển đổi giá trị sang kiểu số.
+        parseInt(): Chuyển đổi sang số nguyên.
+        parseFloat(): Chuyển đổi sang số thập phân.
+
+
+        console.log (...date: Number (value: "123"));       --> 123
+        console.log (...date: parseInt (value: "123.45"));      --> 123
+        console.log (...date: parseFloat (value: "123.45"));       --> 123.45
+        console.log (...date: Number (value: "abc"));       --> NaN (không phải số) 
+
+
+        🎯✅Chuyển đổi sang chuỗi (string)
+        Sử dụng các cách sau để chuyển một giá trị sang kiểu chuỗi:
+        String(): Chuyển đổi giá trị sang chuỗi.
+        toString(): Phương thức có sẵn trên đối tượng.
+
+        console.log (...date: String (value: "123.45"));      --> "123"
+        console.log (...date: (123).toString ());       --> "123"
+        console.log (...date: String (value: true));       --> "true"
+
+
+        🎯✅Chuyển đổi sang kiểu luận lý (Boolean)
+        Sử dụng Boolean() để chuyển đổi giá trị sang kiểu Boolean.
+        Các giá trị sau đây được coi là falsy (chuyển thành false):
+
+        0
+        "" (chuỗi rỗng)
+        null
+        undefined
+        NaN
+        Tất cả giá trị khác được coi là truthy (chuyển thành true).
+
+        console.log (...date: Boolean (value: 0));       --> false
+        console.log (...date: Boolean (value: ""));      --> false
+        console.log (...date: Boolean (value: "Hello"));       --> true
+        console.log (...date: Boolean (value: "abc"));       --> true
+
+
+        ✅Trong biểu thức chứa toán hạng có kiểu Boolean, Javascript sẽ chuyển kiểu toán hạng này, nếu true sẽ chuyển sang giá trị 1, false chuyển sang giá trị 0.
+        let result;
+
+        result = '5' - true;
+        console.log(result); // 4
+
+        result = 2 + true;
+        console.log(result); // 3
+
+        result = 4 + false;
+        console.log(result); // 4
+
+        ✅Trong biểu thức chứa toán hạng có kiểu null, Javascript sẽ chuyển null thành giá trị 0.
+        let result;
+
+        result = -5 + null;
+        console.log(result);  // -5
+
+        result = '15' - null;
+        console.log(result);  // 15
+
+
+
+        🧰🎯✅ JavaScript Explicit Conversion CHUYỂN ĐỔI THỦ CÔNG
+        Trong một vài trường hợp, khi chúng ta muốn chuyển đổi kiểu dữ liệu này sang kiểu dữ liệu khác theo nhu cầu của mình (explicit conversion - chuyển đổi thủ công).
+
+        Trong JavaScript, chúng ta sẽ thực hiện chuyển kiểu thủ công bằng built-in methods có sẵn.
+
+        let result;
+
+        // Chuyển string sang number
+        result = Number('2902');
+        console.log(result); // 2902
+
+        result = Number('homiedev')  
+        console.log(result); // NaN
+
+        // empty strings và null return 0
+        result = Number('')  
+        console.log(result); // 0
+
+        result = Number('       ')  
+        console.log(result); // 0
+
+        // boolean sang number
+        result = Number(true);
+        console.log(result); // 1
+
+        result = Number(false);
+        console.log(result); // 0
+
+        ✅Để chuyển đổi các kiểu dữ liệu khác thành string, bạn có thể sử dụng String() hoặc toString().
+
+        //number to string
+        let result;
+        result = String(2902);
+        console.log(result);  // "2902"
+
+        result = String(0 + 0);
+        console.log(result); // "0"
+
+        result = String(null);
+        console.log(result); // "null"
+
+        result = String(undefined);
+        console.log(result); // "undefined"
+
+        result = String(NaN);
+        console.log(result); // "NaN"
+
+        result = String(true);
+        console.log(result); // "true"
+
+        result = String(Symbol('test'));
+        console.log(result); // "Symbol('test')"
+
+        // toString()
+        result = (0).toString();
+        console.log(result); // "0"
+
+        result = false.toString();
+        console.log(result); // "false"
+
+        String() có thể nhận null và undefined và chuyển chúng thành chuỗi. Tuy nhiên, toString() sẽ hiện lỗi khi truyền giá trị null hoặc undefined.
+
+
+        ✅Chuyển kiểu sang boolean
+        Để chuyển đổi các kiểu dữ liệu khác thành boolean, bạn có thể sử dụng Boolean().
+        Trong JavaScript, khi chuyển kiểu thành boolean, các giá trị: undefined, null, 0, NaN, '' chuyển thành false. Tất cả các giá trị khác sẽ là true
+
+        let result;
+        result = Boolean('');
+        console.log(result); // false
+
+        result = Boolean(0);
+        console.log(result); // false
+
+        result = Boolean(undefined);
+        console.log(result); // false
+
+        result = Boolean('undefined');
+        console.log(result); // true
+
+        result = Boolean(null);
+        console.log(result); // false
+
+        result = Boolean(NaN);
+        console.log(result); // false
+
+
+🧰KIỂU DỮ LIỆU
+✅JavaScript chỉ có một kiểu dữ liệu số duy nhất được sử dụng để biểu diễn cả số nguyên và số thực. Loại dữ liệu này được gọi là Number.
+
+✅Các loại giá trị Number
+    Số nguyên (Integer)
+
+    ✅Số nguyên là các giá trị không có phần thập phân.
+    10 : nguyên dương
+    -5 : nguyên âm
+
+    ✅Số thực (Floating-point numbers)
+    Số thực là các giá trị có phần thập phân.
+    10.1 số thực dương
+    -2.1 số thực âm
+
+    ✅Các giá trị đặc biệt
+    NaN (Not a number)
+    NaN là giá trị đại diện cho một giá trị không phải số.
+    Thường xuất hiện khi thực hiện phép toán không hợp lệ.
+    ✅Infinity và -Infinity
+    Infinity: Đại diện cho giá trị dương vô cực (∞).
+    -Infinity: Đại diện cho giá trị âm vô cực (-∞)
+✅Các phương thức và thuộc tính của Number
+    Thuộc tính của Number
+    Thuộc tính                  Mô tả
+    Number.MAX_VALUE            Số lớn nhất có thể biểu diễn	
+    Number.MIN_VALUE             Số nhỏ nhất có thể biểu diễn
+    Number.POSITION_INFINITY    Đại diện cho dương vô cực
+    Number.POSITION_INFINITY    	 Đại diện cho âm vô cực
+    Number.NaN                  	Đại diện cho NaN
+
+    ✅Phương thức của Number
+   
+    1️⃣ Number.isFinite(value) – Kiểm tra số có phải là hữu hạn không?
+    ✔ Số hữu hạn: Là số thực có giá trị xác định, không phải vô cực (Infinity) hay NaN.
+    ✔ Nếu là số hữu hạn → Trả về true
+    ✔ Nếu là vô cực hoặc không phải số → Trả về false
+    🔍 Ví dụ:
+    console.log(Number.isFinite(100));      // 👉 true (100 là số hữu hạn)
+    console.log(Number.isFinite(Infinity)); // 👉 false (Infinity không phải số hữu hạn)
+    console.log(Number.isFinite(-Infinity)); // 👉 false
+    console.log(Number.isFinite(NaN));      // 👉 false (NaN không phải số)
+    console.log(Number.isFinite("100"));    // 👉 false (Chuỗi không phải số)
+    
+    2️⃣ Number.isInteger(value) – Kiểm tra số có phải là số nguyên không?
+    ✔ Số nguyên: Là số không có phần thập phân.
+    ✔ Nếu là số nguyên → Trả về true
+    ✔ Nếu là số thực (có dấu .) hoặc không phải số → Trả về false
+    🔍 Ví dụ:
+    console.log(Number.isInteger(10));    // 👉 true (10 là số nguyên)
+    console.log(Number.isInteger(-5));    // 👉 true (-5 cũng là số nguyên)
+    console.log(Number.isInteger(3.14));  // 👉 false (3.14 có phần thập phân)
+    console.log(Number.isInteger("10"));  // 👉 false (Chuỗi không phải số)
+    console.log(Number.isInteger(NaN));   // 👉 false (NaN không phải số)
+
+    3️⃣ Number.isNaN(value) – Kiểm tra giá trị có phải là NaN (Not a Number) không?
+    ✔ NaN là một giá trị đặc biệt trong JavaScript khi một phép tính không hợp lệ xảy ra.
+    ✔ Nếu là NaN → Trả về true
+    ✔ Nếu không phải NaN → Trả về false
+
+    🔍 Ví dụ:
+    console.log(Number.isNaN(NaN));       // 👉 true (NaN chính là NaN)
+    console.log(Number.isNaN(10 / "abc")); // 👉 true (10 chia chuỗi → NaN)
+    console.log(Number.isNaN("Hello"));   // 👉 false (Chuỗi không phải NaN)
+    console.log(Number.isNaN(100));       // 👉 false (100 là số bình thường)
+    console.log(Number.isNaN(undefined)); // 👉 false (undefined không phải NaN)
+    
+    💡 Lưu ý:
+
+    isNaN() (hàm toàn cục) có thể nhầm lẫn giữa chuỗi và số.
+    
+    Dùng Number.isNaN() chính xác hơn vì nó chỉ kiểm tra số thực sự là NaN.
+
+    4️⃣ toFixed(n) – Làm tròn số đến n chữ số thập phân
+    ✔ Dùng để định dạng số thập phân với n chữ số sau dấu .
+    ✔ Kết quả trả về là chuỗi, không phải số
+
+    🔍 Ví dụ:
+    let num = 3.14159;
+    console.log(num.toFixed(2)); // 👉 "3.14" (giữ 2 chữ số thập phân)
+    console.log(num.toFixed(0)); // 👉 "3" (bỏ phần thập phân)
+    console.log(num.toFixed(5)); // 👉 "3.14159" (giữ 5 số thập phân)
+    console.log((5.678).toFixed(1)); // 👉 "5.7" có nghĩa là làm tròn số 5.678 lên 1 chữ số thập phân. ố 5.678 sẽ làm tròn lên thành 5.7
+    
+    5️⃣ toString() – Chuyển số thành chuỗi
+    ✔ Dùng khi cần chuyển đổi số thành chuỗi để xử lý dữ liệu dạng văn bản.
+    ✔ Có thể chuyển đổi sang hệ cơ số khác (nhị phân, thập phân, thập lục phân, v.v.)
+
+    🔍 Ví dụ:
+    let num = 123;
+    console.log(num.toString());   // 👉 "123" (chuyển thành chuỗi)
+    console.log((255).toString(2)); // 👉 "11111111" (chuyển sang nhị phân) base 2. Trong hệ nhị phân, 255 = 11111111 (vì 255 = 2⁷ + 2⁶ + 2⁵ + 2⁴ + 2³ + 2² + 2¹ + 2⁰).
+    Kết quả trả về là chuỗi "11111111".
+
+    console.log((255).toString(16)); // 👉 "ff" (chuyển sang hệ thập lục phân) base 16. Trong hệ thập lục phân, 255 = FF (vì 255 = 15×16 + 15, mà 15 trong hệ thập lục phân là F).
+    Kết quả trả về là chuỗi "ff".
+    
+    💡 Ứng dụng:
+    Khi cần nối số với chuỗi ("Số của bạn là " + num.toString())
+    Khi cần chuyển đổi hệ số (.toString(2), .toString(16)
+        
+
+    💡Với JavaScript cũng vậy, bạn có thể dùng chữ cái e để biểu diễn số lượng chữ số 0, ví dụ:
+    let a = 1e3; // 1_000 - 1 nghìn
+    let b = 1e6; // 1_000_000 - 1 triệu
+    let c = 1e9; // 1_000_000_000 - 1 tỷ
+    let d = 4.6e9; // 4_600_000_000 - 4.6 tỷ
+
+    Nói cách khác, eN thực hiện nhân số (trước e) bởi với số 10 mũ N.
+    1e3 === 1 * 1000; // e3 tương đương *1000
+    1.23e4 === 1.23 * 10000; // e4 tương đương *10000
+
+    ✅✔Tương tự, bạn cũng có thể dùng e để biểu diễn những số rất nhỏ bằng cách thay N ở trên bằng số âm:
+    0.000001 === 1e-6;
+
+    ✅✔Nói cách khác, e-N thực hiện chia số (trước e) bởi số 10 mũ N.
+    1e-3 === 1 / 1000; // e3 tương đương /1000
+    1.23e-4 === 1.23 / 10000; // e4 tương đương /10000
+
+
+
+ 🧰  Biểu diễn số ở hệ cơ số 16, 8 và 2
+    Các số mình thường viết trên đây là biểu diễn ở hệ thập phân (cơ số 10). Ngoài ra, bạn có thể biểu diễn number trong JavaScript ở hệ thập lục phân (cơ số 16), bát phân (cơ số 8) và nhị phân (cơ số 2).
+
+    Hệ thập lục phân 16 sử dụng tiền tố là 0x.
+    Hệ bát phân 8 sử dụng tiền tố là 0o.
+    Hệ nhị phân 2 sử dụng tiền tố là 0b.
+    Ví dụ biểu diễn số ở hệ 16, 8 và 2 là:
+
+    // Hệ cơ số 16
+    console.log(0xff); // 255
+    console.log(0xff); // 255 - không phân biệt hoa thường
+
+    // Hệ cơ số 8
+    console.log(0o377); // 255
+
+    // Hệ cơ số 2
+    console.log(0b11111111); // 255
+
+
+ 🧰  Phương thức toString(base)
+ Phương thức num.toString(base) trả về string biểu diễn số num ở hệ cơ số base, ví dụ:
+    let num = 255;
+
+    // chuyển sang hệ cơ số 16
+    console.log(num.toString(16)); // ff
+    
+    // chuyển sang hệ cơ số 2
+    console.log(num.toString(2)); // 11111111
+
+
+
+🧰✅ Kiểu dữ liệu string trong javascript (string cơ bản + template string)
+
+    String cơ bản
+    Khai báo chuỗi
+    Bạn có thể khai báo một chuỗi bằng:
+    Dấu ngoặc đơn (' ')
+    Dấu ngoặc kép (" ")
+    Template literals (` `).
+   
+        vd:
+         let name = "Alice";
+        let city = 'Hà Nội';
+        console.log(name, city); 
+        // 👉 Alice Hà Nội
+
+        ✅1️⃣Đặc điểm của string
+        Immutable (Bất biến): Một chuỗi không thể bị thay đổi trực tiếp. Khi bạn thay đổi chuỗi, một chuỗi mới được tạo ra.
+        Chứa bất kỳ ký tự nào: Bao gồm chữ cái, số, ký tự đặc biệt, hoặc khoảng trắng.
+
+     
+
+            🚀Các phương thức làm việc với String
+
+            📍 Lấy độ dài của chuỗi (length)
+
+            let text = "JavaScript";
+            console.log(text.length); // 👉 10
+            
+            📍 Nối chuỗi (+, concat())
+
+            let str1 = "Hello";
+            let str2 = "World";
+            console.log(str1 + " " + str2); // 👉 "Hello World"
+            console.log(str1.concat(" ", str2)); // 👉 "Hello World"
+
+            📍 Lấy ký tự trong chuỗi (charAt(), [])
+
+            let word = "Hello";
+            console.log(word.charAt(1)); // 👉 "e"
+            console.log(word[1]); // 👉 "e"
+
+            📍 Chuyển đổi chữ hoa, chữ thường (toUpperCase(), toLowerCase())
+
+            let text = "JavaScript";
+            console.log(text.toUpperCase()); // 👉 "JAVASCRIPT"
+            console.log(text.toLowerCase()); // 👉 "javascript"
+
+            📍 Tìm kiếm chuỗi (indexOf(), includes())
+
+            🔹 TÌM RA VỊ TRÍ ĐẦU TIÊN MÀ KÝ TỰ CON XUẤT HIỆN TRON  CHUỖI GỐC
+                NẾU KHÔNG TÌM ĐƯỢC SẼ TRẢ VỀ GIÁ TRỊ LÀ  -1 
+
+
+            let sentence = "Tôi thích học JavaScript!";
+            console.log(sentence.indexOf("JavaScript")); // 👉 14 (vị trí xuất hiện đầu tiên)
+            console.log(sentence.includes("học")); // 👉 true (kiểm tra có chứa từ không)
+
+            📍 Cắt chuỗi (slice(), substring())
+            let text = "JavaScript";
+            console.log(text.slice(0, 4)); // 👉 "Java" (cắt từ vị trí 0 đến 3)
+            console.log(text.substring(4, 10)); // 👉 "Script"
+            console.log(text.slice(4)); // 👉 "Script"  (cắt 4 ký tự đầu tiên)
+
+            ✅ slice() hỗ trợ số âm (tính từ cuối chuỗi) 
+            let text = "JavaScript";
+            console.log(text.slice(0, 4)); // 👉 "Java"
+            console.log(text.slice(-6));  // 👉 "Script" (âm tính từ cuối)
+
+             ❌ substring() KHÔNG hỗ trợ số âm
+             let text = "JavaScript";
+             console.log(text.substring(0, 4));  // 👉 "Java"
+             console.log(text.substring(-6));    // 👉 "JavaScript" (âm bị đổi thành 0 nên mặc định 0 là lấy hết)
+                LƯU Ý: 🔄 substring() hoán đổi start và end nếu start > end
+                console.log(text.slice(4, 0));     // 👉 "" (trả về chuỗi rỗng)
+                console.log(text.substring(4, 0)); // 👉 "Java" (tự động đảo vị trí)
+                
+            
+
+            📍 Thay thế chuỗi (replace())
+
+            let text = "Tôi yêu Java!";
+            console.log(text.replace("Java", "JavaScript")); // 👉 "Tôi yêu JavaScript!"
+
+            📍  phân tách chuỗi bằng split(separator)
+            Cú pháp:
+            string.split(separator, limit)
+            
+            - separator: Dấu phân tách (chuỗi/ký tự) để cắt chuỗi (nếu không có, sẽ trả về mảng chứa toàn bộ chuỗi).
+            - limit (tuỳ chọn): Giới hạn số phần tử của mảng.
+
+            Ví dụ 1: Cắt chuỗi theo dấu cách
+            let text = "Hello world JavaScript";
+            let words = text.split(" "); 
+            console.log(words); // 👉 ["Hello", "world", "JavaScript"]
+
+            Ví dụ 2: Cắt theo dấu phẩy
+            let fruits = "Apple,Orange,Banana";
+            console.log(fruits.split(",")); 
+            // 👉 ["Apple", "Orange", "Banana"]
+            
+            Ví dụ 3: Giới hạn số phần tử
+            let fruits = "Apple,Orange,Banana";
+            console.log(fruits.split(",", 2)); 
+            // 👉 ["Apple", "Orange"]
+
+
+
+
+
+
+
+   🧰  ✅2️⃣Template string
+
+            sử dụng dấu backtick (``)
+            Cách sử dụng:
+            Nội suy (Interpolation): Chèn giá trị biến hoặc biểu thức vào chuỗi bằng cú pháp ${expression}.
+            Hỗ trợ xuống dòng: Cho phép viết chuỗi nhiều dòng mà không cần ký tự nối (\n hoặc +).
+        vd:
+            let name = "Alice";
+            let age = 25;
+
+            // Cách cũ (dùng dấu + để nối chuỗi)
+            console.log("Xin chào, tôi là " + name + ", tôi " + age + " tuổi.");
+
+            // Cách mới (dùng Template String)
+            console.log(`Xin chào, tôi là ${name}, tôi ${age} tuổi.`);
+
+            // 👉 Kết quả: Xin chào, tôi là Alice, tôi 25 tuổi.
+
+
+
+            🚀 Bạn nên dùng Template String khi nào?
+            ✔ Khi cần nối nhiều chuỗi.
+            ✔ Khi cần chèn biến vào chuỗi.
+            ✔ Khi cần viết chuỗi xuống dòng dễ dàng.
+
+        VD:
+            let user = "John";
+            let product = "Laptop";
+            let price = 1500;
+
+            let message = `Xin chào ${user}, 
+            Sản phẩm bạn đặt là: ${product}.
+            Giá: ${price}$`;
+
+            console.log(message);
+
+
+
+ 🧰 ✅startsWith() và endsWith()
+            ✅startsWith(value) – Kiểm tra chuỗi bắt đầu bằng ký tự nào đó
+        Cú pháp: string.startsWith(value, startPosition)
+
+        value: Chuỗi cần kiểm tra.
+        startPosition (tuỳ chọn): Vị trí bắt đầu kiểm tra.
+
+         vd: 
+         let text = "Hello JavaScript";
+         console.log(text.startsWith("Hello")); // 👉 true
+         console.log(text.startsWith("Java"));  // 👉 false
+
+   Ví dụ 2: Kiểm tra từ vị trí khác    
+         console.log(text.startsWith("Java", 6)); // 👉 true
+
+
+
+         ✅ endsWith(value) – Kiểm tra chuỗi kết thúc bằng ký tự nào đó
+
+         value: Chuỗi cần kiểm tra.
+        length (tuỳ chọn): Số ký tự đầu tiên cần kiểm tra.
+
+        Ví dụ 1: Kiểm tra chuỗi kết thúc bằng "Script"
+        let text = "Hello JavaScript";
+        console.log(text.endsWith("Script")); // 👉 true
+        console.log(text.endsWith("Hello"));  // 👉 false
+
+   Ví dụ 2: Kiểm tra trong phần giới hạn
+        console.log(text.endsWith("Java", 10)); // 👉 true (tính từ ký tự 0 → 10)
+
+        
+ 🧰 ✅nuLL và undefined
+        
+        ✅ undefined là gì?
+        Khi một biến được khai báo nhưng chưa được gán giá trị, nó sẽ có giá trị undefined.
+
+        let x;
+        console.log(x); // undefined
+
+        Các trường hợp khác trả về undefined:
+        Hàm không return gì sẽ trả về undefined.
+        Truy cập thuộc tính không tồn tại trong object.
+
+        function test() {}
+        console.log(test()); // undefined
+
+        let obj = {};
+        console.log(obj.name); // undefined
+
+                
+
+        ✅ null là gì?
+        null là một giá trị được gán cố ý để biểu thị rằng không có giá trị gì cả (trống, không xác định, không tồn tại).
+                
+        let y = null;
+        console.log(y); // null
+                ✅ Khi nào dùng null?
+                Khi bạn muốn reset hoặc làm rỗng một giá trị:
+                vd: 
+                let user = { name: "Anna" };
+                user = null; // Xoá toàn bộ object
+
+        
+        🔥 So sánh bằng toán tử:
+        console.log(null == undefined); // true (lỏng lẻo)
+        console.log(null === undefined); // false (nghiêm ngặt)
+
+
+    NÓI DỄ HIỂU CẢ null và undefined ĐỀU KHÔNG MANG GIÁ TRỊ GÌ--> ĐÚNG
+    null có thể gán giá trị nhưng undefined không thể --> SAI
+
+
+
+  🧰 ✅  Math Object trong Javascript
+  Trong JavaScript, Math là một object tích hợp sẵn (built-in object) dùng để thực hiện các phép toán học như: làm tròn, tính mũ, căn bậc hai, sin, cos, số ngẫu nhiên, v.v.
+  Đặc điểm của Math Object
+    Không phải là một constructor: Bạn không thể tạo một thể hiện của Math bằng từ khóa new.
+    Cách sử dụng: Truy cập trực tiếp các phương thức và thuộc tính bằng cú pháp Math.method() hoặc Math.property.
+
+     🎲 Ví dụ sử dụng:
+     console.log(Math.PI); // 3.141592653589793
+     console.log(Math.PI); // 3.141592653589793
+     console.log(Math.round(4.6)); // 5  Math.round(x)	Làm tròn số x đến số nguyên gần nhất. 4.6 gần 5 hơn nên kq là 5
+     console.log(Math.floor(4.9)); // 4   Math.floor(x)	Làm tròn xuống số nguyên gần nhất
+     console.log(Math.ceil(4.1)); // 5    Math.ceil(x)	Làm tròn lên số nguyên gần nhất.
+     console.log(Math.trunc(4.1)); // 4   Math.trunc(x) Cắt bỏ phần thập phân, giữ lại phần nguyên
+     console.log(Math.abs(-10)); // 10    Math.abs(x) Trả về giá trị tuyệt đối của x
+     console.log(Math.pow(2, 3)); // 8    Math.pow(x, y) Trả về x mũ y (x^y)
+     console.log(Math.sqrt(25)); // 5     Math.sqrt(x)	Trả về căn bậc hai của x
+     console.log(Math.max(1, 5, 3)); // 5   Math.max(a, b, ...)	Trả về số lớn nhất trong danh sách
+     console.log(Math.min(1, 5, 3)); // 1   Math.min(a, b, ...)	Trả về số nhỏ nhất trong danh sách
+     
+     🎲 ỨNG DỤNG TẠO SỐ NGẪU NHIÊN 
+     // Tạo số ngẫu nhiên từ 0 đến 9
+        let rand = Math.floor(Math.random() * 10);
+        console.log(rand);
+
+        // Tạo số ngẫu nhiên từ 1 đến 100
+        let rand2 = Math.floor(Math.random() * 100) + 1;
+        console.log(rand2);
+
+
+ 🧠 toLocaleString() là gì?
+        toLocaleString() là một phương thức dùng để định dạng số hoặc ngày theo ngôn ngữ (locale) của bạn — ví dụ như hiển thị số theo kiểu Việt Nam (25.000) hay kiểu Mỹ (25,000).
+
+     🔢 Cách dùng với số (Number):
+        📌 Cú pháp cơ bản:  number.toLocaleString([locales], [options])
+
+        locales: là mã ngôn ngữ như vi-VN (Việt Nam), en-US (Mỹ),...
+        options: là các tuỳ chọn để định dạng sâu hơn (như kiểu tiền tệ, số thập phân,...)
+
+        ✅ Ví dụ 1: Format số kiểu Việt Nam
+        let x = 25000;
+        console.log(x.toLocaleString('vi-VN')); 
+        // 👉 Kết quả: "25.000"
+
+        ✅ Ví dụ 2: Format số kiểu Mỹ
+        let x = 25000;
+        console.log(x.toLocaleString('en-US')); 
+        // 👉 Kết quả: "25,000"
+
+        💰 Format thành kiểu tiền tệ
+        let price = 25000;
+
+         console.log(price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
+            // 👉 "25.000 ₫"
+
+         console.log(price.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+            // 👉 "$25,000.00"
+
+
+
+
+
+🧰 ✅Kiểu dữ liệu Boolean.
+    Boolean là một kiểu dữ liệu chỉ có 2 giá trị duy nhất:
+
+    ✅ true (đúng)
+    
+    ❌ false (sai)
+    
+    Boolean thường được sử dụng để:
+    Kiểm tra điều kiện trong các cấu trúc điều khiển (như if, while).
+    Đại diện cho trạng thái bật/tắt, đúng/sai, có/không trong ứng dụng.
+
+    ✅vd1. So sánh số:    
+    let a = 5;
+    let b = 10;
+    console.log(a < b);  // 👉 Kết quả: true (vì 5 nhỏ hơn 10)
+
+    ✅vd2. Kiểm tra điều kiện:
+    let isRaining = true;
+
+    if (isRaining) {
+        console.log("Mang theo ô nhé!");
+    } else {
+        console.log("Trời đẹp, không cần ô.");
+    }
+
+    ✅ Ví dụ 3: Kiểm tra mật khẩu
+    let inputPassword = "123456";
+    let correctPassword = "123456";
+
+    let isCorrect = inputPassword === correctPassword;
+    let nonCorrect = inputPassword !== correctPassword;
+
+
+    console.log("Mật khẩu đúng không?", isCorrect); // 👉 true
+    console.log("Mật khẩu Không đúng?", nonCorrect);// 👉 flase
+
+
+
+ 🧰 ✅SO SÁNH BẰNG VÀ TUYỆT ĐỐI   
+    🔸 == (so sánh bằng, lỏng lẻo)   
+    So sánh giá trị, bỏ qua kiểu dữ liệu.
+    JavaScript sẽ tự chuyển đổi kiểu (type coercion) nếu cần.
+    🔸 Ví dụ:
+    5 == "5"      // 👉 true (số 5 == chuỗi "5")
+    0 == false    // 👉 true
+    null == undefined // 👉 true
+    🔸 === (so sánh bằng, nghiêm ngặt)
+    So sánh cả giá trị và kiểu dữ liệu
+    Không tự động chuyển đổi gì cả
+    🔸 Ví dụ:
+    5 === "5"     // 👉 false (số khác chuỗi)
+    0 === false   // 👉 false (số khác Boolean)
+    null === undefined // 👉 false
+
+
+
+
+🟢 🧰 ✅  Conditional statement ĐIỀU KIỆN RẼ NHÁNH
+
+    🟢 Conditional Statement là gì?
+    👉 Là câu lệnh dùng để ra quyết định trong lập trình.
+    Nó giống như bạn hỏi:
+
+    “Nếu điều này đúng, thì làm gì đó?”
+    ✅ Ví dụ đơn giản:
+    let age = 18;
+
+    if (age >= 18) {
+        console.log("Bạn đủ tuổi lái xe!");
+    } else {
+        console.log("Bạn chưa đủ tuổi lái xe.");
+    }
+
+    🔹 Có thể có nhiều điều kiện (else if):
+    let score = 7;
+
+    if (score >= 8) {
+        console.log("Học sinh giỏi");
+    } else if (score >= 6.5) {
+        console.log("Học sinh khá");
+    } else {
+        console.log("Học sinh trung bình");
+    }
+
+
+    let animal = prompt("nhap con vat yeu thích");
+    if (animal === `dog`) {
+        console.log(`Gau Gau`);
+    } else if (animal === `duck`) {
+        console.log(`cap cap`)
+    } else if (animal === `cat`) {
+        console.log(`Meo Meo`)
+    } else {
+        console.log("Xin loi chung toi khong co")
+    }
+
+
+🟢 Toán tử 3 ngôi
+    Toán tử 3 ngôi là một cách viết ngắn gọn của câu lệnh if...else
+    Nó có 3 phần, vì vậy gọi là “3 ngôi”.
+    🔹 Cú pháp: điều_kiện ? giá_trị_nếu_đúng : giá_trị_nếu_sai;
+    📌 Ví dụ đơn giản:
+    CÁCH VIẾT THƯỜNG VỚI IF ELSE:
+    let age = 18;
+    let message;
+    if (age >= 18) {
+        message = "Đủ tuổi";
+    } else {
+        message = "Chưa đủ tuổi";
+    }
+    console.log(message);
+
+    📌Giờ viết bằng toán tử 3 ngôi:
+    let age = 18;
+    let message = age >= 18 ? "Đủ tuổi" : "Chưa Đủ Tuổi";
+    console.log(message);
+
+    🎯 Khi nào dùng?
+    Khi bạn có câu if-else đơn giản
+
+    Bạn muốn viết gọn và nhanh
+
+
+🟢 Logical Operators (Toán tử logic) trong JavaScript
+    👉 Đây là các toán tử dùng để kiểm tra nhiều điều kiện cùng lúc
+    (giống như nói: "đúng cả 2", hoặc "chỉ cần 1 cái đúng", hoặc "ngược lại")
+
+    Các toán tử logic chính
+    📌1.Toán Tử AND (&&)
+    Toán tử && trả về true nếu tất cả các biểu thức đều đúng.
+    Nếu một biểu thức là false, nó sẽ dừng lại và trả về false ngay lập tức.
+        
+    vd: 
+    let age = 20;
+    let hasID = true;
+        if (age >= 18 && hasID) {
+        console.log("Bạn được vào rạp chiếu phim");
+    }
+    👉 Cả 2 điều kiện phải đúng thì mới cho vào.
+
+🧑‍💻    ✅ Code minh hoạ đơn giản:
+    let username = prompt("Nhập tên đăng nhập:");
+    let password = prompt("Nhập mật khẩu:");
+    
+    // Tài khoản đúng là: admin / 123456
+    if (username === "admin" && password === "123456") {
+        console.log("Đăng nhập thành công ✅");
+    } else {
+        console.log("Tên đăng nhập hoặc mật khẩu sai ❌");
+    }
+ 
+
+
+    📌2. || (OR – hoặc)
+    Toán tử || trả về true nếu ít nhất một biểu thức đúng.
+    Nếu một biểu thức là true, nó sẽ dừng lại và trả về true ngay lập tức.
+
+    let isWeekend = true;
+    let isHoliday = false;
+    if (isWeekend || isHoliday) {
+        console.log("Bạn được nghỉ!");
+    }
+
+    ✅ Thêm ví dụ dùng || (đăng nhập bằng 1 trong 2 cách)
+        let user = prompt("Nhập tài khoản hoặc email:");
+
+        if (user === "admin" || user === "admin@gmail.com") {
+            console.log("Tài khoản hợp lệ");
+        } else {
+            console.log("Không tìm thấy tài khoản");
+        }
+        👉   Cho phép đăng nhập bằng tài khoản hoặc email
+
+
+    📌. ! (NOT – phủ định)
+    Toán tử ! đảo ngược giá trị logic.
+    Nếu một biểu thức là true, ! sẽ biến nó thành false, và ngược lại.
+
+    ✅🔴 Dùng ! để kiểm tra người dùng chưa nhập gì
+    let username = prompt("Nhập tên đăng nhập:");
+    if (!username) {
+        console.log("Bạn chưa nhập tài khoản!");
+    }
+    
+
+    🔴 🔥 Độ ưu tiên (Precedence) của các toán tử logic
+
+    Toán tử ! có mức ưu tiên cao nhất.
+    Sau đó đến toán tử &&.
+    Toán tử || có mức ưu tiên thấp nhất
+    🔍 Ví dụ minh họa: 
+
+    true || false && false
+🧑‍💻VÍ DỤ THỰC TẾ:
+
+    let username = "Alice";
+    let password = "123456";
+    let email = "alice@example.com";
+
+// Kiểm tra tất cả các thông tin đều được nhập và không rỗng
+if (username && password && email) {
+  console.log("Đăng ký thành công!");
+} else {
+  console.log("Vui lòng nhập đầy đủ thông tin!");
+}
+
+
+🧑‍💻 VD thực tế:
+    let userInput = "";
+    // Nếu userInput là falsy (ví dụ chuỗi rỗng), thì gán giá trị "Guest"
+    let usernameDisplay = userInput || "Guest";
+    console.log(usernameDisplay); // 👉 "Guest"
+
+       Ví dụ 2: Dùng !
+    !false && true
+    👉 Ưu tiên:
+    !false → true
+    true && true → true
+    ✅ Kết quả: true
+
+ 🧑‍💻 VD thực tế:  
+ 
+ let isLoggedIn = false;
+    if (!isLoggedIn) {
+      console.log("Người dùng chưa đăng nhập."); // Sẽ in ra dòng này vì !false = true
+    }
+    
+    👉 Theo thứ tự ưu tiên:
+    false && false chạy trước → kết quả: false
+    true || false → kết quả: true
+    ✅ Kết quả cuối cùng: true
+
+    📌 Nếu bạn muốn kiểm soát thứ tự rõ ràng, nên dùng dấu ngoặc ().
+    true || (false && false)   // 👉 kết quả: true
+    (true || false) && false   // 👉 kết quả: false
+
+
+✅🔴 🧑‍💻ứng dụng thực tế 
+
+let userAccount = {
+    username: "Alice",
+    password: "secret"
+  };
+  
+  let inputUsername = "Alice";
+  let inputPassword = "secret";
+  
+  if (inputUsername === userAccount.username && inputPassword === userAccount.password) {
+    console.log("Đăng nhập thành công!");
+  } else {
+    console.log("Tên đăng nhập hoặc mật khẩu không đúng!");
+  }
+  
