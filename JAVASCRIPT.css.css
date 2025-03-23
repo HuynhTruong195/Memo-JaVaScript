@@ -777,6 +777,7 @@ console.log ("ten cua ban la") + name;
      console.log(Math.sqrt(25)); // 5     Math.sqrt(x)	Trả về căn bậc hai của x
      console.log(Math.max(1, 5, 3)); // 5   Math.max(a, b, ...)	Trả về số lớn nhất trong danh sách
      console.log(Math.min(1, 5, 3)); // 1   Math.min(a, b, ...)	Trả về số nhỏ nhất trong danh sách
+     console.log(Math.random());  trả về số ngãu nhiên
      
      🎲 ỨNG DỤNG TẠO SỐ NGẪU NHIÊN 
      // Tạo số ngẫu nhiên từ 0 đến 9
@@ -1073,3 +1074,270 @@ let userAccount = {
     console.log("Tên đăng nhập hoặc mật khẩu không đúng!");
   }
   
+
+
+
+  ✅🔴 Câu lệnh switch-case
+  Switch/case là một cấu trúc điều kiện rẽ nhánh trong lập trình, dùng để kiểm tra giá trị của một biến và thực hiện các hành động khác nhau tùy theo giá trị đó. Nó giống như nhiều câu lệnh if...else if, nhưng gọn gàng và dễ đọc hơn khi bạn cần so sánh một biến với nhiều giá trị cụ thể.
+
+  📌 Ví dụ dễ hiểu:
+
+    let ngay = 3;
+
+    switch (ngay) {
+    case 1:
+        console.log("Chủ Nhật");
+        break;
+    case 2:
+        console.log("Thứ Hai");
+        break;
+    case 3:
+        console.log("Thứ Ba");
+        break;
+    default:
+        console.log("Không rõ ngày");
+    }
+
+
+    🧠 Giải thích từng phần:
+        switch (biến) – kiểm tra giá trị của biến.
+
+        case – là từng trường hợp cụ thể.
+
+        break – thoát khỏi switch sau khi chạy xong một case (nếu không có, nó sẽ chạy tiếp các case dưới).
+
+        default – giống như else, dùng khi không khớp với case nào.
+
+  ✅ 1. Nhiều case có thể chia sẻ chung một khối mã
+  📌 Ví dụ:.
+
+    let diem = "A";
+
+    switch (diem) {
+    case "A":
+    case "A+":
+    case "A-":
+        console.log("Bạn học rất giỏi!");
+        break;
+    case "B":
+        console.log("Bạn học khá!");
+        break;
+    default:
+        console.log("Cần cố gắng hơn!");
+    }
+ ✅ 2. default không bắt buộc phải là cuối cùng
+ 
+ Mặc dù thông thường bạn thấy default ở cuối, nhưng thật ra bạn có thể đặt nó ở bất kỳ đâu trong switch, miễn là bạn xử lý đúng.
+
+    📌 Ví dụ:
+
+    let x = 10;
+
+    switch (x) {
+    default:
+        console.log("Không khớp case nào cả!");
+        break;
+    case 5:
+        console.log("Giá trị là 5");
+        break;
+    case 10:
+        console.log("Giá trị là 10");
+        break;
+    }
+
+
+
+
+
+✅🔴   Truthy vs Falsy trong javascript
+    Falsy values
+        "Falsy" là những giá trị được chuyển đổi thành false khi đánh giá trong ngữ cảnh Boolean. Có 6 giá trị được coi là falsy:
+        false (giá trị Boolean false)
+        0 (số không)
+        -0 (âm số không)
+        "" hoặc '' (chuỗi rỗng)
+        null (giá trị rỗng)
+        undefined (giá trị chưa được định nghĩa)
+        NaN (Not-a-Number)
+
+        ✅ Ví dụ:
+        if ("Hello") {
+            console.log("Đây là truthy");  // ✅ chạy
+          }
+          
+          if (0) {
+            console.log("Đây là truthy");  // ❌ KHÔNG chạy
+          } else {
+            console.log("Đây là falsy");   // ✅ chạy
+          }
+          
+
+          VD khác: 
+          let ten = "";  // falsy
+            if (!ten) {
+            console.log("Tên đang trống!");
+            }
+
+            ✅ Diễn giải:
+            ten được gán là "" (chuỗi rỗng) → đây là falsy.
+
+            Trong if (!ten):
+
+            !ten có nghĩa là phủ định lại giá trị của ten.
+
+            Vì ten là falsy → !ten sẽ thành true.
+
+            Kết quả: điều kiện đúng → in ra dòng "Tên đang trống!"
+            ✅ Ý nghĩa thực tế:
+            Khi bạn muốn kiểm tra một ô input bị bỏ trống, bạn chỉ cần:
+            if (!inputValue) {
+                console.log("Bạn chưa nhập gì cả!");
+              }
+              
+
+              VD KHÁC: 
+              let diem = 0;  // falsy
+                if (diem || diem === 0) {
+                console.log("Có điểm hợp lệ!"); 
+                }
+
+                ✅ Diễn giải:
+                diem = 0 → là falsy.
+                if (diem || diem === 0) nghĩa là:
+                Nếu diem là truthy → chạy.
+                Nếu diem là falsy, thì kiểm tra thêm: diem === 0 → có đúng không?
+                Ở đây diem === 0 là đúng, nên cả biểu thức (diem || diem === 0) trả về true.
+
+                ✅ Kết quả: In ra "Có điểm hợp lệ!"
+                ✅ Tại sao cần viết như vậy?
+                Vì 0 là falsy, nên nếu chỉ viết:
+                            if (diem) {
+                                console.log("Có điểm");
+                            }
+                → sẽ không chạy khi diem = 0, mặc dù 0 là giá trị hợp lệ.
+                ➡️ Do đó, bạn cần thêm || diem === 0 để vẫn chấp nhận điểm bằng 0.            
+
+
+
+
+  ✅🔴VÒNG LẶP FOR...LOOP trong Javascript
+  Okay, giờ mình cùng tìm hiểu về vòng lặp for trong JavaScript nhé! Đây là một trong những cấu trúc lặp phổ biến nhất để chạy đi chạy lại một đoạn code nhiều lần, nhất là khi bạn biết số lần lặp.
+        ✅ Cú pháp for cơ bản:        
+        for (khởi_tạo; điều_kiện; cập_nhật) {
+            // khối lệnh sẽ chạy mỗi vòng lặp
+          }
+          🧠 Giải thích từng phần:    
+          for (let i = 0; i < 5; i++) {
+            console.log("Lần lặp thứ", i);
+          }
+
+          let i = 0	Khởi tạo biến đếm i bắt đầu từ 0
+          i < 5	Điều kiện để tiếp tục lặp (nếu sai thì dừng)
+          i++	Tăng i sau mỗi vòng lặp (i = i + 1)
+          console.log()	Lệnh được chạy trong mỗi lần lặp         
+          🧾 Kết quả:
+        Lần lặp thứ 0
+        Lần lặp thứ 1
+        Lần lặp thứ 2
+        Lần lặp thứ 3
+        Lần lặp thứ 4
+
+        🎯 Ví dụ thực tế
+        1. In ra các số từ 1 đến 10:
+        for (let i = 1; i <= 10; i++) {
+            console.log(i);
+          }
+          
+         2. Tính tổng từ 1 đến 100: 
+         let tong = 0;
+         for (let i = 1; i <= 100; i++) {
+           tong += i;        // 👉 Đây là cách viết rút gọn của: tong = tong + i.           
+         }
+         console.log("Tổng là:", tong);
+        i	tong (sau cộng)
+        1	0 + 1 = 1
+        2	1 + 2 = 3
+        3	3 + 3 = 6
+        4	6 + 4 = 10
+        ...	...
+        100	4950 + 100 = 5050
+
+        3. Duyệt qua mảng:
+        let fruits = ["Táo", "Chuối", "Cam"];
+        for (let i = 0; i < fruits.length; i++) {    //i < fruits.length: Lặp cho đến khi i nhỏ hơn độ dài của mảng. fruits.length là 3, vì có 3 phần tử.
+          console.log(fruits[i]);
+        }
+        
+
+        ✅ 4. Viết lại bằng for...of
+        let fruits = ["Táo", "Chuối", "Cam"];
+        for (let fruit of fruits) {
+          console.log(fruit);
+        }
+        🔍 Giải thích:
+        fruit là biến đại diện cho từng phần tử trong mảng fruits.
+        Mỗi lần lặp, biến fruit sẽ lần lượt nhận các giá trị: "Táo", "Chuối", "Cam".
+        📌 Cách này ngắn gọn và dễ đọc hơn so với dùng chỉ số i.
+
+        ✅ 5. Chỉ in ra trái cây bắt đầu bằng chữ "C"
+        let fruits = ["Táo", "Chuối", "Cam", "Chôm chôm", "Ổi"];
+            for (let fruit of fruits) {
+            if (fruit.startsWith("C")) {
+                console.log(fruit);
+            }
+            }
+            🔍 Giải thích:
+            fruit.startsWith("C") kiểm tra xem chuỗi có bắt đầu bằng chữ "C" không.
+            
+            Nếu có, thì console.log(fruit) sẽ in ra nó.
+
+
+ ✅🔴🌀 1. Infinite Loop – vòng lặp vô hạn 🌀
+ Là vòng lặp không bao giờ kết thúc, vì điều kiện lặp luôn đúng.
+ 🔥 Ví dụ:
+    while (true) {
+        console.log("Chạy hoài luôn nè!");
+    }
+    ⚠️ Cảnh báo:
+    Những vòng lặp này có thể làm đơ trình duyệt hoặc khiến chương trình bị treo.
+    Cần break ra bằng điều kiện hoặc nhấn Ctrl + C nếu đang chạy trong terminal.
+
+    ✅ Thêm ví dụ thực tế có điều kiện thoát:
+    let count = 0;
+    while (true) {
+    console.log("Lần", count);
+    count++;
+    if (count > 5) {
+        break; // Thoát khỏi vòng lặp
+    }
+    }
+
+
+
+ ✅🔁 2. Nested Loop (Vòng lặp lồng nhau)
+ Là vòng lặp bên trong một vòng lặp khác. Mỗi lần lặp của vòng ngoài → vòng trong chạy toàn bộ.  
+ 🔥 Ví dụ:      
+  for (let i = 1; i <= 3; i++) {
+    for (let j = 1; j <= 2; j++) {
+      console.log(`i = ${i}, j = ${j}`);
+    }
+  }
+  🧾 Kết quả:
+    i = 1, j = 1
+    i = 1, j = 2
+    i = 2, j = 1
+    i = 2, j = 2
+    i = 3, j = 1
+    i = 3, j = 2
+
+    🧮 Ứng dụng thực tế của Nested Loop
+    ✅ In bảng cửu chương:
+    for (let i = 2; i <= 9; i++) {
+        for (let j = 1; j <= 10; j++) {
+          console.log(`${i} × ${j} = ${i * j}`);
+        }
+        console.log("---------");
+      }
+
+    Khi i = 2 và j = 1, kết quả in ra sẽ là: 2 × 1 = 2.
+    Khi i = 2 và j = 2, kết quả in ra sẽ là: 2 × 2 = 4.
