@@ -1316,6 +1316,7 @@ let userAccount = {
 
  ✅🔁 2. Nested Loop (Vòng lặp lồng nhau)
  Là vòng lặp bên trong một vòng lặp khác. Mỗi lần lặp của vòng ngoài → vòng trong chạy toàn bộ.  
+ - tổng số lần lặp bằng số vòng bên trong x số vòng bên ngoài
  🔥 Ví dụ:      
   for (let i = 1; i <= 3; i++) {
     for (let j = 1; j <= 2; j++) {
@@ -1341,3 +1342,185 @@ let userAccount = {
 
     Khi i = 2 và j = 1, kết quả in ra sẽ là: 2 × 1 = 2.
     Khi i = 2 và j = 2, kết quả in ra sẽ là: 2 × 2 = 4.
+
+
+    chuyển nhanh chuỗi thành số (number). thì thêm dấu + trước đó. vf
+     let so = +prompt(...)
+
+
+
+
+ ✅ 🔁🧠 1. Hàm (Function) là gì?
+ Hàm là một khối mã (code) được đặt tên và có thể tái sử dụng nhiều lần.
+
+    🎯 Tác dụng:
+    Gom nhóm các dòng code lại với nhau
+    Giúp code gọn hơn, dễ đọc, dễ sửa
+    Có thể nhận tham số (parameter) và trả về kết quả
+    🧾 Ví dụ đơn giản:
+    function chao(name) {
+        console.log("Xin chào, " + name + "!");
+      }
+            chao("Nam");  // Gọi hàm và truyền "Nam" vào
+      chao("Linh"); // Gọi lại, lần này với "Linh"
+      
+      🧩 Giải thích:
+    function chao(name) → tạo hàm tên chao, có tham số name
+    console.log(...) → in ra lời chào
+    chao("Nam") → gọi hàm với tên là “Nam”
+
+    🔄 2. return là gì?
+    Từ khóa return dùng để trả về một giá trị từ bên trong hàm.
+
+    🧾 Ví dụ đơn giản:
+    let kq = cong(3, 5);
+    console.log(kq); // 8
+
+    ✅ Cách hoạt động của return:
+    Khi hàm chạy đến return, nó sẽ dừng lại ngay tại đó và trả về kết quả.
+    Bạn có thể lưu kết quả trả về vào biến, hoặc dùng trực tiếp.
+    💡 Mẹo nhớ:
+    function là để tạo "cỗ máy" xử lý
+    return là để "đưa kết quả ra" từ cỗ máy đó
+
+
+
+✅ 🔁🧠 Break & continue
+🧨 1. break là gì?
+👉 break dùng để thoát khỏi vòng lặp ngay lập tức, kể cả khi điều kiện lặp vẫn còn đúng.
+    ✅ Ví dụ:
+    for (let i = 1; i <= 10; i++) {
+        if (i === 5) {
+        break;
+        }
+        console.log(i);
+    }
+    
+        ⏬ Kết quả in ra:
+        1
+        2
+        3
+        4
+
+
+    🚫 2. continue là gì?
+    👉 continue dùng để bỏ qua vòng lặp hiện tại, nhưng tiếp tục vòng lặp tiếp theo.
+
+    ✅ Ví dụ:
+    for (let i = 1; i <= 5; i++) {
+        if (i === 3) {
+          continue;
+        }
+        console.log(i);
+      }
+      🔍 Giải thích:
+    Khi i = 3 → continue chạy → bỏ qua console.log
+
+    Tiếp tục chạy từ i = 4
+
+    ⏬ Kết quả in ra:
+    1
+    2
+    4
+    5
+
+    🎯 Ví dụ: Bỏ qua số chẵn, chỉ in số lẻ (dùng continue)
+    for (let i = 1; i <= 10; i++) {
+        if (i % 2 === 0) {
+          continue; // bỏ qua số chẵn
+        }
+        console.log(i); // in số lẻ
+      }
+
+      🔍 Giải thích:
+      ✅ Dòng 2: if (i % 2 === 0)
+        Đây là câu điều kiện, kiểm tra:
+        "i chia 2 dư mấy?"❓
+         i % 2 là phép chia lấy dư
+        Nếu dư bằng 0 → tức là số chẵn
+        Nếu dư khác 0 → tức là số lẻ
+
+
+
+
+
+ ✅ 🔁 while là gì?  
+        while là một vòng lặp giúp bạn lặp lại một đoạn code nhiều lần, chừng nào điều kiện còn đúng. Dừng lại khi điều kiện sai
+            ✅ Cú pháp cơ bản:
+                while (điều_kiện) {
+                    // mã lệnh sẽ chạy khi điều_kiện là true
+                }
+                
+             Nhập đến khi nào đúng
+                let pass;
+        
+                while (pass !== "1234") {
+                pass = prompt("Nhập mật khẩu:");
+                }
+        
+                console.log("Đúng mật khẩu!");
+                🔍 Giải thích:
+             Người dùng sẽ được yêu cầu nhập lại cho đến khi nhập đúng là "1234".
+             Khi nhập đúng → điều kiện sai (pass !== "1234" sẽ là false) →thoát vòng lặp.
+    
+  📌VD TRÒ CHƠI BINGO
+             let bingo = 49;
+
+             while (true) {
+               let input = +prompt("Nhap so du doan");
+             if (input > 49) {
+               alert ("Số bạn nhập quá lớn");
+             } else if ( input < 49) {
+               alert ("số bạn nhập hơi nhỏ ");
+             } else {
+               alert ("BINGO!!!")
+               break;
+             }
+             }
+
+             NOTE: DÙNG BIẾN while (true) ĐỂ VÒNG LẶP CHẠY LIÊN TỤC KHI ĐẾN KẾT QUẢ ĐÚNG THÌ CHO BREAK ĐỂ DỪNG
+
+
+
+ ✅ 🔄 do...while là gì?
+    Đây là vòng lặp mà code bên trong sẽ chạy ÍT NHẤT 1 LẦN, dù điều kiện có đúng hay sai.
+    📌 Khác với while bình thường:
+    while: kiểm tra điều kiện trước → nếu sai thì không chạy gì cả
+    do...while: chạy trước, rồi mới kiểm tra điều kiện → ít nhất chạy 1 lần
+
+    ❗ Ví dụ đặc biệt (điều kiện sai ban đầu):
+    let x = 10;
+    do {
+    console.log("x =", x);
+    x++;
+    } while (x < 5);
+    🟢 Kết quả: x = 10
+    ✅ Dù x < 5 là sai, đoạn code trong do { ... } vẫn chạy 1 lần rồi mới dừng.
+
+    📌1. Nhập mật khẩu đúng mới tiếp tục
+    let password = "123456";
+    let userInput;
+    do {
+    userInput = prompt("Nhập mật khẩu:");
+    } while (userInput !== password);
+    console.log("Mật khẩu đúng, bạn đã đăng nhập thành công!");
+
+    🔍 Giải thích:
+
+    Đoạn code trên sẽ yêu cầu người dùng nhập mật khẩu.
+        Nếu mật khẩu sai (không bằng "123456"), do...while sẽ tiếp tục yêu cầu nhập lại cho đến khi người dùng nhập đúng.
+        Chạy ít nhất một lần, dù mật khẩu ban đầu sai.
+    
+
+        📌 VD khác      
+        let number = 2;
+        while (number === 1) {
+        console.log("lap while");
+        }
+
+        do {
+        console.log ("vong lap do...while");
+        } while (number === 1);
+            
+        KẾT QUẢ: "vong lap do...while"
+        dù 2 vế đều sai nhưng do while vẫn chạy 1 lần bất kể đúng hay sai
